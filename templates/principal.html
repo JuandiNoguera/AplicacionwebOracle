@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Inicio de sesion{% endblock %}
+{% block content %}
+<form action="/principal" method="post">
+	<div>
+		<fieldset>
+			<b>Iniciar sesion en Oracle</b>
+			<br>
+				<p>Usuario: <input type="text" name="usuario" value="" /></p>
+				<p>Contraseña: <input type="text" name="password" value="" /></p>
+				<p>IP servidor: <input type="text" name="ip" value="" /></p>
+				<p>Puerto servidor: <input type="number" name="ip" value="" /></p>
+				<p>Nombre db: <input type="text" name="db" value="" /></p>
+			<br/>
+		</fieldset>
+		<input type="submit" value="Enviar">
+	</div>
+</form>
+{% endblock %}
