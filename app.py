@@ -17,10 +17,9 @@ def inicio():
 		db=request.form.get("db")
 		ident=(usuario,password,ip+":"+puerto+"/"+db)
 		connect= cx_Oracle.connect(ident[0],ident[1],ident[2])
-		if connect.status_code==200:
-			return render_template('principal.html')
-		else:
-			return print("Los datos introducidos son incorrectos")
+		cursor = connect.cursor()
+		cursor.execute('select * from cat')
+			return render_template('principal.html',tablas=cursor)
 
 if __name__ == '__main__':
     app.run()

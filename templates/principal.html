@@ -16,4 +16,12 @@
 		<input type="submit" value="Enviar">
 	</div>
 </form>
+		<div>			
+				{% for p in cursor %}
+					<tr>
+						<td align="center">{{p[0]}}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
 {% endblock %}
